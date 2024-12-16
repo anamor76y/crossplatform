@@ -1,0 +1,11 @@
+C:\Users\Acer\Desktop\3k\crosspl\4\Library\bin\Debug\net8.0\Library.deps.json
+C:\Users\Acer\Desktop\3k\crosspl\4\Library\bin\Debug\net8.0\Library.dll
+C:\Users\Acer\Desktop\3k\crosspl\4\Library\bin\Debug\net8.0\Library.pdb
+C:\Users\Acer\Desktop\3k\crosspl\4\Library\obj\Debug\net8.0\Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Acer\Desktop\3k\crosspl\4\Library\obj\Debug\net8.0\Library.AssemblyInfoInputs.cache
+C:\Users\Acer\Desktop\3k\crosspl\4\Library\obj\Debug\net8.0\Library.AssemblyInfo.cs
+C:\Users\Acer\Desktop\3k\crosspl\4\Library\obj\Debug\net8.0\Library.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Desktop\3k\crosspl\4\Library\obj\Debug\net8.0\Library.dll
+C:\Users\Acer\Desktop\3k\crosspl\4\Library\obj\Debug\net8.0\refint\Library.dll
+C:\Users\Acer\Desktop\3k\crosspl\4\Library\obj\Debug\net8.0\Library.pdb
+C:\Users\Acer\Desktop\3k\crosspl\4\Library\obj\Debug\net8.0\ref\Library.dll
