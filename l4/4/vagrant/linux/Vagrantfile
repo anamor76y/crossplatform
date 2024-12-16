@@ -1,0 +1,46 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/bionic64"
+
+  # Налаштування мережі
+  config.vm.network "public_network" 
+
+  # Призначаємо папки з хоста на гостьову машину
+  config.vm.synced_folder ".", "/vagrant"
+
+  # Встановлення .NET SDK та Docker за допомогою shell provisioning
+  config.vm.provision "shell", inline: <<-SHELL
+    # Оновлюємо список пакетів
+    sudo apt-get update -y
+
+    # Встановлюємо необхідні залежності
+    sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+
+    # Додаємо ключ для Microsoft пакету
+    wget https://packages.microsoft.com/keys/microsoft.asc
+    sudo apt-key add microsoft.asc
+
+    # Додаємо репозиторій Microsoft
+    sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.04/prod.list)"
+
+    # Оновлюємо список пакетів з новим репозиторієм
+    sudo apt-get update -y
+
+    # Встановлюємо .NET SDK
+    sudo apt-get install -y dotnet-sdk-8.0
+
+    # Встановлюємо Docker
+    sudo apt-get install -y docker.io
+
+    # Додаємо користувача до групи docker, щоб використовувати Docker без sudo
+    sudo usermod -aG docker $USER
+
+    # Перезапускаємо shell для застосування змін
+    newgrp docker
+
+    # Встановлюємо BaGet (приватний NuGet репозиторій)
+    docker pull loicsharma/baget
+
+    # Запускаємо контейнер BaGet
+    docker run -d -p 5001:80 loicsharma/baget
+  SHELL
+end
